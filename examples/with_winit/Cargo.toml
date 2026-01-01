@@ -1,0 +1,27 @@
+[package]
+name = "with_winit"
+version = "0.0.0"
+description = "An example using Vello with Velotyp to render to a winit window."
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[lib]
+name = "with_winit"
+crate-type = ["cdylib", "lib"]
+
+[[bin]]
+# Stop the PDB collision warning on windows
+name = "with_winit_bin"
+path = "src/main.rs"
+
+[dependencies]
+velotyp = { workspace = true }
+vello = { workspace = true, default-features = true }
+winit = "0.30.12"
+pollster = "0.4.0"
+typst_world.path = "../typst_world"
+
+[lints]
+workspace = true
